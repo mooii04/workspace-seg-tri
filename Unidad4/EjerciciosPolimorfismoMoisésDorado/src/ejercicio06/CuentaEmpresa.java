@@ -1,0 +1,37 @@
+package ejercicio06;
+
+public class CuentaEmpresa extends Cuenta{
+
+	private int robo;
+
+	public CuentaEmpresa(double saldo, int robo) {
+		super(saldo);
+		this.robo = robo;
+	}
+
+	public int getRobo() {
+		return robo;
+	}
+
+	public void setRobo(int robo) {
+		this.robo = robo;
+	}
+
+	@Override
+	public String toString() {
+		return "CuentaEmpresa [robo=" + robo + "]";
+	}
+	
+	public double realizarIngreso(double ingreso) {
+		return super.realizarIngreso(ingreso);
+	}
+	
+	public double realizarRetirada(double retirada) {
+		return super.realizarRetirada(retirada);
+	}
+	
+	public double calcularSaldoTotal(double ingreso, double retirada) {
+		return super.calcularSaldoTotal(ingreso, retirada) - robo;
+	}
+	
+}
