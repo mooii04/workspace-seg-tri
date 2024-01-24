@@ -86,11 +86,19 @@ public class Oficina {
 		}
 	}
 	
-	public void sacarDinero (int id, int tam, Cliente [] listaClientes, double ingreso) {
+	public void sacarDinero (int id, int tam, Cliente [] listaClientes, double retirada) {
 		int uno = 1;
 		for (int i = 0; i < uno; i++) {
 			listaClientes[i]=buscarById(id, tam, listaClientes);
-			listaClientes[i].sacarDinero(ingreso);;
+			listaClientes[i].sacarDinero(retirada);;
+		}
+	}
+	
+	public void meterDinero (int id, int tam, Cliente [] listaClientes, double ingreso) {
+		int uno = 1;
+		for (int i = 0; i < uno; i++) {
+			listaClientes[i]=buscarById(id, tam, listaClientes);
+			listaClientes[i].meterDinero(ingreso);;
 		}
 	}
 	

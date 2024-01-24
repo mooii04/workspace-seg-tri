@@ -15,7 +15,7 @@ public class Principal {
 		int tam = 4;
 		int opcion;
 		int id;
-		double retirada;
+		double retirada, ingreso;
 		
 		Cuenta listaCuentas[] = new Cuenta[tam];
 		
@@ -54,7 +54,10 @@ public class Principal {
 				break;
 				
 				case 2:
+					System.out.println("Diga cuanto dinero quiere ingresar");
+					ingreso = Leer.datoDouble();
 					
+					of.meterDinero(id, tam, listaClientes, ingreso);
 				break;
 				
 				case 3:					
@@ -62,15 +65,17 @@ public class Principal {
 				break;
 				
 				case 4:
-					
+					ingreso = 0;
+					retirada = 0;
+					of.calcularDineroTotal(ingreso, retirada);
 				break;
 				
 				case 5:
-					
+					of.calcularRoboEmpresas();
 				break;
 				
 				case 6:
-					
+					of.calcularRegaloJovenes();
 				break;
 				
 				case 0:
@@ -90,7 +95,7 @@ public class Principal {
 		System.out.println("(1) Retirar dinero");
 		System.out.println("(2) Ingresar dinero");
 		System.out.println("(3) Ver su saldo");
-		System.out.println("(4) Ver total ganado entre todas las cuetas (Oficina)");
+		System.out.println("(4) Ver total ganado entre todas las cuentas (Oficina)");
 		System.out.println("(5) Ver total ganado por el robo a las empresas (Oficina)");
 		System.out.println("(6) Ver total perdido por el regalo a los jovenes (Oficina)");
 		System.out.println("(0) Salir del banco");
