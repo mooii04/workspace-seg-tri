@@ -22,16 +22,14 @@ public class Cuenta {
 		return "Cuenta [saldo=" + saldo + "]";
 	}
 	
-	public double realizarIngreso(double ingreso) {
-		return ingreso;
+	public void realizarIngreso(double ingreso) {
 	}
 	
-	public double realizarRetirada(double retirada) {
-		return retirada;
+	public void realizarRetirada(double retirada) {
 	}
 	
 	public double calcularSaldoTotal(double ingreso, double retirada) {
-		return saldo + realizarIngreso(ingreso) - realizarRetirada(retirada);
+		return saldo;
 	}
 	
 }

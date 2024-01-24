@@ -5,12 +5,14 @@ public class Cliente {
 	private double saldo;
 	private Cuenta c;
 	private String nombre;
+	private int id;
 	
-	public Cliente(double saldo, Cuenta c, String nombre) {
+	public Cliente(double saldo, Cuenta c, String nombre, int id) {
 		super();
 		this.saldo = saldo;
 		this.c = c;
 		this.nombre = nombre;
+		this.id = id;
 	}
 
 	public double getSaldo() {
@@ -37,17 +39,29 @@ public class Cliente {
 		this.nombre = nombre;
 	}
 
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	@Override
 	public String toString() {
-		return "Cliente [saldo=" + saldo + ", c=" + c + ", nombre=" + nombre + "]";
+		return "Cliente [saldo=" + saldo + ", c=" + c + ", nombre=" + nombre + ", id=" + id + "]";
+	}
+
+	public void sacarDinero(double retirada) {
+		c.realizarRetirada(retirada);
 	}
 	
-	public double sacarDinero(double retirada) {
-		return c.realizarRetirada(retirada);
+	public void meterDinero(double ingreso) {
+		c.realizarIngreso(ingreso);
 	}
 	
-	public double meterDinero(double ingreso) {
-		return c.realizarIngreso(ingreso);
+	public void verSaldo() {
+		System.out.println(c.getSaldo());
 	}
 	
 }

@@ -32,14 +32,14 @@ public class CuentaCorriente extends Cuenta{
 		return "CuentaCorriente [mantFijo=" + mantFijo + ", puntos=" + puntos + "]";
 	}
 	
-	public double realizarIngreso(double ingreso) {
+	public void realizarIngreso(double ingreso) {
 		puntos ++;
-		return super.realizarIngreso(ingreso);
+		super.setSaldo(super.getSaldo() + ingreso);
 	}
 	
-	public double realizarRetirada(double retirada) {
+	public void realizarRetirada(double retirada) {
 		puntos ++;
-		return super.realizarRetirada(retirada);
+		super.setSaldo(super.getSaldo() - retirada);
 	}
 	
 	public double calcularSaldoTotal(double ingreso, double retirada) {

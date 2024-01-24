@@ -22,12 +22,12 @@ public class CuentaJoven extends Cuenta{
 		return "CuentaJoven [regalo=" + regalo + "]";
 	}
 
-	public double realizarIngreso(double ingreso) {
-		return super.realizarIngreso(ingreso);
+	public void realizarIngreso(double ingreso) {
+		super.setSaldo(super.getSaldo() + ingreso);
 	}
 	
-	public double realizarRetirada(double retirada) {
-		return super.realizarRetirada(retirada);
+	public void realizarRetirada(double retirada) {
+		super.setSaldo(super.getSaldo() - retirada);
 	}
 	
 	public double calcularSaldoTotal(double ingreso, double retirada) {

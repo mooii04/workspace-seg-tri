@@ -14,6 +14,8 @@ public class Principal {
 		
 		int tam = 4;
 		int opcion;
+		int id;
+		double retirada;
 		
 		Cuenta listaCuentas[] = new Cuenta[tam];
 		
@@ -24,10 +26,20 @@ public class Principal {
 		
 		Oficina of = new Oficina(listaCuentas);
 		
-		Cliente clineteC = new Cliente (c.getSaldo(), c, "Moisés");
-		Cliente clienteCC = new Cliente (cc.getSaldo(), cc, "Bruno");
-		Cliente clienteCE = new Cliente (ce.getSaldo(), ce, "Manuel");
-		Cliente cluenteCJ = new Cliente (cj.getSaldo(), cj, "Victor");
+		Cliente clienteC = new Cliente (c.getSaldo(), c, "Moisés", 1);
+		Cliente clienteCC = new Cliente (cc.getSaldo(), cc, "Bruno", 2);
+		Cliente clienteCE = new Cliente (ce.getSaldo(), ce, "Manuel", 3);
+		Cliente clienteCJ = new Cliente (cj.getSaldo(), cj, "Victor", 4);
+		
+		Cliente [] listaClientes = new Cliente [tam];
+		
+		listaClientes[0] = clienteC;
+		listaClientes[1] = clienteCC;
+		listaClientes[2] = clienteCE;
+		listaClientes[3] = clienteCJ;
+
+		System.out.println("Diga su id");
+		id = Leer.datoInt();
 		
 		do {
 			imprimirMenu();
@@ -35,15 +47,18 @@ public class Principal {
 			
 			switch (opcion) {
 				case 1:
+					System.out.println("Diga cuanto dinero quiere retirar");
+					retirada = Leer.datoDouble();
 					
+					of.sacarDinero(id, tam, listaClientes, retirada);
 				break;
 				
 				case 2:
 					
 				break;
 				
-				case 3:
-					
+				case 3:					
+					of.verSaldo(id, tam, listaClientes);
 				break;
 				
 				case 4:
@@ -75,8 +90,8 @@ public class Principal {
 		System.out.println("(1) Retirar dinero");
 		System.out.println("(2) Ingresar dinero");
 		System.out.println("(3) Ver su saldo");
-		System.out.println("(4) Ver total ganado entre todas las cuetas (Ofincina)");
-		System.out.println("(5) Ver total ganado por el robo a las empresas (Ofincina)");
+		System.out.println("(4) Ver total ganado entre todas las cuetas (Oficina)");
+		System.out.println("(5) Ver total ganado por el robo a las empresas (Oficina)");
 		System.out.println("(6) Ver total perdido por el regalo a los jovenes (Oficina)");
 		System.out.println("(0) Salir del banco");
 	}
