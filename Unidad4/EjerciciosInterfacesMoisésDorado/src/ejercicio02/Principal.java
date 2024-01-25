@@ -17,14 +17,14 @@ public class Principal {
 		//IVA Producto
 		precioIvaProd = p.calculoIva(precioProd, ivaProd);
 		
-		System.out.printf("El precio del producto es de %.2f€", precioProd, ", pero aplicandole"
-				+ " un %.2f", ivaProd, "% de IVA se queda en %.2f€", precioIvaProd);
+		System.out.printf("El precio del producto es de %.2f€ pero"
+				+ " aplicandole un %d de IVA se queda en %.2f€", precioProd, ivaProd, precioIvaProd);
 		
 		//IRPF Trabajador
 		sueldoIrpfTrabajador = t.calculoIrpf(sueldoTrabajador);
 		
-		System.out.printf("\nEl trabajador cobra %.2f", sueldoTrabajador, "€, pero aplicandole"
-				+ " el IRPF se queda en %.2f€", sueldoIrpfTrabajador);
+		System.out.printf("\nEl trabajador cobra %.2f€, pero aplicandole"
+				+ " el IRPF se queda en %.2f€", sueldoTrabajador, sueldoIrpfTrabajador);
 		
 	}
 
