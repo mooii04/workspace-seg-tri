@@ -75,6 +75,7 @@ public class Principal {
 				break;
 				
 				case 6:
+					System.out.println("Los muertos de la rfef");
 					of.calcularRegaloJovenes();
 				break;
 				
