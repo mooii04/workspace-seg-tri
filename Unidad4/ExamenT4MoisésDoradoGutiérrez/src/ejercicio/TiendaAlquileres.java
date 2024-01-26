@@ -55,12 +55,12 @@ public class TiendaAlquileres {
 	
 	
 
-	public void mostrarListado(int numVehiculos, Vehiculos v) {
+	public void mostrarListado(int numVehiculos) {
 		for (int i = 0; i < numVehiculos; i++) {
 			if (listaVeh[i] instanceof Batmovil) {
 				((Batmovil)listaVeh[i]).avisarMaximo();
 			}
-			System.out.println("Matrícula: "+ v.getMatricula() + " Metros: "+ v.getMetrosTam() + " Año Fabricación: "+ v.getAnioFabricacion() + " Número del Vehículo: " + v.getNumVehiculos());
+			System.out.println("Matrícula: "+ listaVeh[i].getMatricula() + " Metros: "+ listaVeh[i].getMetrosTam() + " Año Fabricación: "+ listaVeh[i].getAnioFabricacion() + " Número del Vehículo: " + listaVeh[i].getNumVehiculos());
 		}
 	}
 	

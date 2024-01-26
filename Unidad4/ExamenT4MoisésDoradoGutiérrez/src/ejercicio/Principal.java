@@ -37,7 +37,7 @@ public class Principal {
 				
 				case 2:
 					System.out.println("Aquí tiene la lista de todos los Vehículos");
-					listaTienda.mostrarListado(tam, v);
+					listaTienda.mostrarListado(tam);
 				break;
 				
 				case 3:
