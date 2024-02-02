@@ -46,13 +46,13 @@ public class Principal {
 		
 		System.out.println(listaAlum);
 		
-		System.out.println(lista.size());
+		System.out.println(listaAlum.size());
 		
-		lista.remove(0);
+		listaAlum.remove(3);
 		
 		System.out.println(listaAlum);
 		
-		System.out.println(lista.size());
+		System.out.println(listaAlum.size());
 
 	}
 
