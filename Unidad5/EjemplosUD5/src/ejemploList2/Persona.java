@@ -39,7 +39,7 @@ public class Persona {
 	
 	@Override
 	public String toString() {
-		return "Alumno [nombre=" + nombre + ", edad=" + edad + ", dni=" + dni + "]";
+		return "Persona [nombre=" + nombre + ", edad=" + edad + ", dni=" + dni + "]";
 	}
 	
 }

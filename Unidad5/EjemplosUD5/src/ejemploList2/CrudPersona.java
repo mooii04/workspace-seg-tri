@@ -36,6 +36,17 @@ public class CrudPersona {
 		return lista.add(p);
 	}
 
+	public void imprimirLista() {
+		for (Persona p : lista) {
+			System.out.println(p);
+		}
+	}
+	
+	public void borrar (String dni) {
+		if(buscarByDni(dni) != null) {
+			lista.remove(buscarByDni(dni));
+		}
+	}
 	
 	public Persona buscarByDni (String dni) {
 		boolean encontrado=false;
