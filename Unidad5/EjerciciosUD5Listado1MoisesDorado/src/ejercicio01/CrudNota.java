@@ -28,7 +28,18 @@ public class CrudNota {
 		System.out.println();
 	}
 	
+	public void imprimir2() {
+		for(Nota n : lista) {
+			System.out.println(n);
+		}
+	}
+	
+	public int mostrarTamano() {
+		return lista.size();
+	}
+	
 	public void agregar(Nota n) {
+		
 		lista.add(n);
 		aumentarContador();
 	}
@@ -39,13 +50,17 @@ public class CrudNota {
 		return contador;
 	}
 	
-	public void mostrarContador() {
-		System.out.println(aumentarContador());
-	}
-	
 	public void borrar (int id) {
 		if(buscarById(id) != null) {
 			lista.remove(buscarById (id));
+		}
+	}
+	
+	//no me va
+	public void borrarNota(int id) {
+		int uno=1;
+		if(!lista.isEmpty()) {
+			lista.remove(id-uno);
 		}
 	}
 	
@@ -54,8 +69,8 @@ public class CrudNota {
 		int i=0;
 		
 		while(i<lista.size() && !encontrado) {
-			Nota deLista = lista.get(i);
-			if(deLista.getId() == id) {
+			Nota n = lista.get(i);
+			if(n.getId() == id) {
 				encontrado = true;
 			} else {
 				i++;
@@ -68,4 +83,20 @@ public class CrudNota {
 		}
 	}
 	
+	public void modificar() {
+		
+	}
+	
+	//así no se hace
+	public Nota verNotaPorIndice(int id) {
+		int uno =1;
+		return lista.get(id-uno);
+	}
+	
+	public void crearNota(Nota n) {
+		
+		agregar(n);
+	}
+	
 }
+
