@@ -24,7 +24,7 @@ public class TiendaAlquileres {
 		return "TiendaAlquileres [listaVeh=" + Arrays.toString(listaVeh) + "]";
 	}
 	
-	public double buscarByNumVehiculos(Vehiculos v, int numVehiculos) {
+	public double buscarByNumVehiculos(int numVehiculos) {
 		int i=0;
 		boolean encontrado=false;
 		while (i < listaVeh[i].getNumVehiculos() && !encontrado) {
@@ -47,7 +47,7 @@ public class TiendaAlquileres {
 		int uno=1;
 		double resul=0;
 		for (int i = 0; i < uno; i++) {
-			resul = buscarByNumVehiculos(v, numVehiculos);
+			resul = buscarByNumVehiculos(numVehiculos);
 			resul = v.calcularPrecio();
 		}
 		return resul;
@@ -89,7 +89,7 @@ public class TiendaAlquileres {
 	public double calcularAlquilerDias(Vehiculos v, int numVehiculos, int numDias) {
 		double resul=0;
 		for (int i = 0; i < listaVeh.length; i++) {
-			resul = buscarByNumVehiculos(v, numVehiculos);
+			resul = buscarByNumVehiculos(numVehiculos);
 			resul = v.calcularPrecio() * numDias;
 		}
 		return resul;
