@@ -1,5 +1,6 @@
 package ejemploSet;
 
+import java.util.Iterator;
 import java.util.Set;
 
 import ejemploList2.Persona;
@@ -26,4 +27,26 @@ public class CrudPersona {
 		return "CrudPersona [listaP=" + listaP + "]";
 	}
 	
+	public Persona buscarPorDni(String dni) {
+		boolean encontrado = false;
+		int i = 0;
+		Persona dniBuscado;
+		Iterator <Persona> ite = listaP.iterator();
+		while(ite.hasNext()) {
+			dniBuscado = ite.next();
+			
+			if(dniBuscado.getDni() == dni) {
+				encontrado = true;
+			}else {
+				encontrado = false;
+			}
+		}
+		
+		if(encontrado) {
+			return dniBuscado;
+		}else {
+			return null;
+		}
+		
+	}
 }
