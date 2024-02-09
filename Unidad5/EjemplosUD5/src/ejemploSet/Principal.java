@@ -10,7 +10,7 @@ public class Principal {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		Set <String> lista = new HashSet <String>();
+		//Set <String> lista = new HashSet <String>();
 		
 		Set <Persona> listaP = new HashSet <Persona>();
 		int dni;
