@@ -26,7 +26,7 @@ public class CrudPersona {
 	public String toString() {
 		return "CrudPersona [listaP=" + listaP + "]";
 	}
-	
+	/*
 	public Persona buscarPorDni(String dni) {
 		boolean encontrado = false;
 		int i = 0;
@@ -48,5 +48,5 @@ public class CrudPersona {
 			return null;
 		}
 		
-	}
+	}*/
 }
