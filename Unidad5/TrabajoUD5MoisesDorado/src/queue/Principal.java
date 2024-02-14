@@ -9,44 +9,70 @@ public class Principal {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		
+		Queue<Cliente> colaCliente = new LinkedList<Cliente>();
 
-		// Creamos una cola
-        Queue<String> cola = new LinkedList<>();
+		Charcuteria charc = new Charcuteria("Chorizos la familia", colaCliente);
+		
+		int op;
+		String nombre;
 
-        String nombre;
-        int tam, suma, op;
-        int uno=1;
-        
-        do {
-        	imprimirMenu();
-        	op = Leer.datoInt();
-        	
-        }while(op != 0);
-        
-        // Agregamos algunos elementos a la cola
-        System.out.println("Hola buenas, bienvenido a la zona de pedidos");
-        System.out.println("Para comenzar diga cuantos clientes han hecho un pedido");
-        tam = Leer.datoInt();
-        
-        for (int i = 0; i < tam; i++) {
-        	suma = uno+i;
-			System.out.println("Diga el nombre del cliente nº" + suma);
-			nombre = Leer.dato();
-			cola.offer(nombre);
-		}
-        
-        System.out.println(cola);
-        
-              
+		do {
+			imprimirMenu();
+			op = Leer.datoInt();
+			
+			switch (op) {
+				case 1:
+					System.out.println("Inserte el nombre del cliente");
+					nombre = Leer.dato();
+					
+					System.out.println("Este es el número del ticket del cliente");
+					
+				break;
+				
+				case 2:
+				break;
+				
+				case 3:
+				break;
+				
+				case 0:
+					System.out.println("Un día más en la Charcuteria: "+charc.getNombre()+"\nNos vemos mañana con más ganas");
+				break;
+				
+				default:
+					System.out.println("Inserte un número comentado anteriormente");
+				break;
+			}
+			
+		}while (op != 0);
+		
+		/*
+	    // Agregar clientes a la cola
+		charc.agregarCliente(new Cliente("Juan", 1));
+		charc.agregarCliente(new Cliente("Maria", 2));
+		charc.agregarCliente(new Cliente("Pedro", 3));
+
+		System.out.println(charc.siguienteCliente());
+		
+		System.out.println(charc.siguienteCliente());
+		
+		System.out.println(charc.siguienteCliente());
+		
+	    // Atender clientes
+	    System.out.println("Clientes que tienen que ser atendidos:");
+	    while (charc.hayClientes()) {
+	    	Cliente cliente = charc.siguienteCliente();
+	        System.out.println("Atendiendo a: " + cliente.getNombre());
+	    }*/
+	    
 	}
 	
-	public static void imprimirMenu() {
-		System.out.println("(1)\t=>\tNúmero de clientes");
-		System.out.println("(2)\t=>\tNombre de los clientes");
-		System.out.println("(3)\t=>\tLista de los clientes");
-		System.out.println("(4)\t=>\tNúmero de clientes");
-		System.out.println("(5)\t=>\tNúmero de clientes");
-		System.out.println("(6)\t=>\tNúmero de clientes");
-	}	
-	
+	public static void imprimirMenu () {
+		System.out.println("Pulse lo que desee");
+		System.out.println("(1)\tAgregar clientes a la cola");
+		System.out.println("(2)\tVer quienes faltan por ser atendidos");
+		System.out.println("(3)\tVer a quien le toca");
+		System.out.println("(0)\tCerrar Charcutería");
+	}
 }
