@@ -39,7 +39,7 @@ public class Principal {
 		System.out.println(lista.contains("Mil"));
 		*/
 		
-		listaP.add(new Persona ("Ánegl", 34, "123A"));
+		listaP.add(new Persona ("Ángel", 34, "123A"));
 		listaP.add(new Persona ("Rafa", 37, "123B"));
 		listaP.add(new Persona ("Miguel", 67, "123C"));
 		

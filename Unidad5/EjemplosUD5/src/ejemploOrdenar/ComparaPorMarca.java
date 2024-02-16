@@ -2,7 +2,7 @@ package ejemploOrdenar;
 
 import java.util.Comparator;
 
-public class ComparaPorMarca implements Comparator<Corredor> {
+public class ComparaPorMarca implements Comparator <Corredor> {
 
 	@Override
 	public int compare(Corredor c1, Corredor c2) {

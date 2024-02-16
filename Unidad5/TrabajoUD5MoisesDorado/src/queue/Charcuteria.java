@@ -1,7 +1,6 @@
 package queue;
 
 import java.util.Queue;
-import java.util.Random;
 
 public class Charcuteria {
 
@@ -38,6 +37,7 @@ public class Charcuteria {
 	public void agregarCliente(Cliente c) {
         colaClientes.offer(c);
         System.out.println("Nuevo cliente en la cola: " + c.getNombre());
+        System.out.println("Número de ticket: "+c.getNumTicket());
     }
 
     public Cliente siguienteCliente() {
@@ -46,17 +46,6 @@ public class Charcuteria {
 
     public boolean hayClientes() {
         return !colaClientes.isEmpty();
-    }
-    
-    public int sacarNumeroTicket () {
-    	int numTicket;
-    	int desde=1, hasta=100;
-    	Random rnd = new Random (System.nanoTime());
-    	for (int i = 0; i < ; i++) {
-			numTicket = rnd.nextInt(hasta-desde+1)+desde;
-		}
-    	
-    	return numTicket;
     }
     
 }

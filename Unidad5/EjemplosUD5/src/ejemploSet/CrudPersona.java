@@ -40,13 +40,12 @@ public class CrudPersona {
 			}else {
 				encontrado = false;
 			}
+			if(encontrado) {
+				return dniBuscado;
+			}else {
+				return null;
+			}
 		}
-		
-		if(encontrado) {
-			return dniBuscado;
-		}else {
-			return null;
-		}
-		
+		return null;
 	}*/
 }

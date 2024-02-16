@@ -19,7 +19,8 @@ public class Principal {
 		corredores.add(new Corredor(1, 1.12, "Luis Miguel López"));
 		corredores.add(new Corredor(6, 1.14, "Miguel Campos"));
 		
-		//PEDIR A BRUNO LO DEL SORT Y LO DEL SORT JUNTO A LA INTANCIA DEL NO NATURAL
+		//VA A ESTAR EN LA PLATAFORMA
+		
 	}
 
 }
