@@ -4,21 +4,11 @@ import java.util.Queue;
 
 public class Charcuteria {
 
-	private String nombre;
 	private Queue<Cliente> colaClientes;
-	
-	public Charcuteria(String nombre, Queue<Cliente> colaClientes) {
-		super();
-		this.nombre = nombre;
-		this.colaClientes = colaClientes;
-	}
-	
-	public String getNombre() {
-		return nombre;
-	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+    public Charcuteria(Queue<Cliente> colaClientes) {
+		super();
+		this.colaClientes = colaClientes;
 	}
 
 	public Queue<Cliente> getColaClientes() {
@@ -28,23 +18,26 @@ public class Charcuteria {
 	public void setColaClientes(Queue<Cliente> colaClientes) {
 		this.colaClientes = colaClientes;
 	}
-	
+
 	@Override
 	public String toString() {
-		return "Charcuteria [nombre=" + nombre + ", colaClientes=" + colaClientes + "]";
+		return "Charcuteria [colaClientes=" + colaClientes + "]";
 	}
 
-	public void agregarCliente(Cliente c) {
-        colaClientes.offer(c);
-        System.out.println("Nuevo cliente en la cola: " + c.getNombre());
-        System.out.println("Número de ticket: "+c.getNumTicket());
+	public void agregarCliente(Cliente cliente) {
+        colaClientes.add(cliente);
+        System.out.println("Cliente " + cliente.getNombre() + " ha llegado a la cola.");
     }
 
-    public Cliente siguienteCliente() {
+    public Cliente atenderCliente() {
         return colaClientes.poll();
     }
 
-    public boolean hayClientes() {
+    public Cliente verProximoCliente() {
+        return colaClientes.peek();
+    }
+
+    public boolean hayClientesEnCola() {
         return !colaClientes.isEmpty();
     }
     

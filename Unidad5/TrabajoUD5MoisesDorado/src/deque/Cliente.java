@@ -1,11 +1,11 @@
-package queue;
+package deque;
 
 public class Cliente {
 
 	private String nombre;
 
 	public Cliente(String nombre) {
-	    this.nombre = nombre;
+		this.nombre = nombre;
 	}
 
 	public String getNombre() {
@@ -20,5 +20,5 @@ public class Cliente {
 	public String toString() {
 		return "Cliente [nombre=" + nombre + "]";
 	}
-	
+	 
 }

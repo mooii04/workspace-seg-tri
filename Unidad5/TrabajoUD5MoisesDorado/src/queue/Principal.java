@@ -10,80 +10,61 @@ public class Principal {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		Queue<Cliente> colaCliente = new LinkedList<Cliente>();
+		Queue <Cliente> colaCliente = new LinkedList <Cliente>();
+		
+		Charcuteria charcuteria = new Charcuteria(colaCliente);
+        int op;
+        String nombreCliente;
+        String nombreLocal = "Chorizos Familia";
+        
+        System.out.println("Bienvenidos al sistema de la charcutería ["+nombreLocal+"]");
+        
+        do{
+            imprimirMenu();
+        	op = Leer.datoInt();
 
-		Charcuteria charc = new Charcuteria("Chorizos la familia", colaCliente);
-		
-		int op, numTicket;
-		String nombre;
-
-		do {
-			imprimirMenu();
-			op = Leer.datoInt();
-			
-			switch (op) {
-				case 1:
-					System.out.println("Inserte el nombre del cliente");
-					nombre = Leer.dato();
-					
-					System.out.println("Diga el número del ticket");
-					numTicket = Leer.datoInt();
-					
-					Cliente c = new Cliente (nombre, numTicket);
-					
-					charc.agregarCliente(c);
-				break;
-				
-				case 2: //mirar esto bien, pq no está muy bien
-					System.out.println("Clientes que tienen que ser atendidos:");
-				    while (charc.hayClientes()) {
-				    	Cliente cliente = charc.siguienteCliente();
-				        System.out.println(cliente.getNombre());
-				        System.out.println("Turno de: "+cliente.getNombre());
-				    }
-				break;
-				
-				case 3:
-					
-				break;
-				
-				case 0:
-					System.out.println("Un día más en la Charcuteria: "+charc.getNombre()+"\nNos vemos mañana con más ganas");
-				break;
-				
-				default:
-					System.out.println("Inserte un número comentado anteriormente");
-				break;
-			}
-			
-		}while (op != 0);
-		
-		
-	    // Agregar clientes a la cola
-		charc.agregarCliente(new Cliente("Juan", 1));
-		charc.agregarCliente(new Cliente("Maria", 2));
-		charc.agregarCliente(new Cliente("Pedro", 3));
-
-		System.out.println(charc.siguienteCliente());
-		
-		System.out.println(charc.siguienteCliente());
-		
-		System.out.println(charc.siguienteCliente());
-		
-	    // Atender clientes
-	    System.out.println("Clientes que tienen que ser atendidos:");
-	    while (charc.hayClientes()) {
-	    	Cliente cliente = charc.siguienteCliente();
-	        System.out.println("Atendiendo a: " + cliente.getNombre());
-	    }
-	    
+            switch (op) {
+                case 1:
+                    System.out.println("Ingrese el nombre del cliente:");
+                    nombreCliente = Leer.dato();
+                    charcuteria.agregarCliente(new Cliente(nombreCliente));
+                break;
+                
+                case 2:
+                    if (charcuteria.hayClientesEnCola()) {
+                        Cliente clienteAtendido = charcuteria.atenderCliente();
+                        System.out.println("Atendiendo a " + clienteAtendido.getNombre());
+                    } else {
+                        System.out.println("No hay clientes en la cola");
+                    }
+                break;
+                
+                case 3:
+                    if (charcuteria.hayClientesEnCola()) {
+                        Cliente proximoCliente = charcuteria.verProximoCliente();
+                        System.out.println("El próximo cliente en la cola es: " + proximoCliente.getNombre());
+                    } else {
+                        System.out.println("No hay clientes en la cola");
+                    }
+                break;
+                
+                case 0:
+                	System.out.println("Gracias por utilizar el sistema de la charcutería ["+nombreLocal+"]!!!");
+                break;
+                
+                default:
+                    System.out.println("Opción no válida. Por favor, seleccione una nueva opción :)");
+            }
+        }while(op != 0);
+        
 	}
 	
 	public static void imprimirMenu () {
-		System.out.println("Pulse lo que desee");
-		System.out.println("(1)\tAgregar clientes a la cola");
-		System.out.println("(2)\tVer cola de clientes y a quien le toca");
-		System.out.println("(3)\t...");
-		System.out.println("(0)\tCerrar Charcutería");
+		System.out.println("\n===== Menú de Charcutería =====");
+        System.out.println("(1) Agregar cliente a la cola");
+        System.out.println("(2) Atender cliente");
+        System.out.println("(3) Ver próximo cliente");
+        System.out.println("(0) Salir");
 	}
+	
 }
