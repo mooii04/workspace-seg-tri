@@ -28,6 +28,11 @@ public class Banco {
         System.out.println(cliente.getNombre() + " ha sido agregado a la cola del banco.");
     }
 
+	public void agregarClienteAlFinal(Cliente cliente) {
+        cola.offerLast(cliente);
+        System.out.println(cliente.getNombre() + " ha sido agregado al final de la cola del banco.");
+    }
+	
     public Cliente atenderCliente() {
         if (!cola.isEmpty()) {
             return cola.pollFirst();
@@ -46,5 +51,17 @@ public class Banco {
 
     public int obtenerNumeroClientes() {
         return cola.size();
+    }
+    
+    public Cliente obtenerUltimoCliente() {
+        return cola.peekLast();
+    }
+
+    public void removerCliente(Cliente cliente) {
+        if (cola.remove(cliente)) {
+            System.out.println("El cliente " + cliente.getNombre() + " ha sido removido de la cola.");
+        } else {
+            System.out.println("El cliente no está en la cola.");
+        }
     }
 }

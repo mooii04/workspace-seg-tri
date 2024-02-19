@@ -37,8 +37,20 @@ public class Charcuteria {
         return colaClientes.peek();
     }
 
+    public int cantidadClientesEnCola() {
+        return colaClientes.size();
+    }
+
     public boolean hayClientesEnCola() {
         return !colaClientes.isEmpty();
     }
-    
+
+    public boolean contieneCliente(Cliente cliente) {
+        return colaClientes.contains(cliente);
+    }
+
+    public void limpiarCola() {
+        colaClientes.clear();
+        System.out.println("Se ha limpiado la cola de clientes.");
+    }
 }

@@ -13,7 +13,7 @@ public class Principal {
 		Queue <Cliente> colaCliente = new LinkedList <Cliente>();
 		
 		Charcuteria charcuteria = new Charcuteria(colaCliente);
-        int op;
+        int op, cantClientes;
         String nombreCliente;
         String nombreLocal = "Chorizos Familia";
         
@@ -49,15 +49,24 @@ public class Principal {
                 break;
                 
                 case 4:
-                    
+                	cantClientes = charcuteria.cantidadClientesEnCola();
+                    System.out.println("Cantidad de clientes en cola: " + cantClientes);
                 break;
                 
                 case 5:
-                	
+                	System.out.println("Ingrese el nombre del cliente");
+                    nombreCliente = Leer.dato();
+                    Cliente clienteBuscado = new Cliente(nombreCliente);
+                    
+                    if(charcuteria.contieneCliente(clienteBuscado)) {
+                    	System.out.println("El cliente " + nombreCliente + " está en la cola.");
+                    } else {
+                        System.out.println("El cliente " + nombreCliente + " no está en la cola.");
+                    }
                 break;
                 
-                case   6:
-                	
+                case 6:
+                	charcuteria.limpiarCola();
                 break;
                 
                 case 0:
@@ -76,9 +85,9 @@ public class Principal {
         System.out.println("(1) Agregar cliente a la cola");
         System.out.println("(2) Atender cliente");
         System.out.println("(3) Ver próximo cliente");
-        System.out.println("(4) ...");
-        System.out.println("(5) ...");
-        System.out.println("(6) ...");
+        System.out.println("(4) Cantidad de clientes en cola");
+        System.out.println("(5) Ver si un cliente está en cola");
+        System.out.println("(6) Limpiar la cola");
         System.out.println("(0) Salir");
 	}
 	
