@@ -48,6 +48,18 @@ public class Principal {
                     }
                 break;
                 
+                case 4:
+                    
+                break;
+                
+                case 5:
+                	
+                break;
+                
+                case   6:
+                	
+                break;
+                
                 case 0:
                 	System.out.println("Gracias por utilizar el sistema de la charcutería ["+nombreLocal+"]!!!");
                 break;

@@ -44,6 +44,14 @@ public class Principal {
                     System.out.println("Número de clientes en la cola: " + numClientes);
                 break;
                 
+                case 5:
+                	
+                break;
+                
+                case   6:
+                	
+                break;
+                
                 case 0:
                     System.out.println("Saliendo del sistema de gestión de cola del banco...");
                 break;
