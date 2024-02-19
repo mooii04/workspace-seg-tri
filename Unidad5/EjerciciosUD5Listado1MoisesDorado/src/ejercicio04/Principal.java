@@ -56,15 +56,13 @@ public class Principal {
 			
 			break;
 			
-			/*case 4:
+			case 4:
 				System.out.println("Diga nombre del contacto");
 				nombre = Leer.dato();
 				System.out.println("Diga nuevo teléfono");
 				nuevoTlf=Leer.dato();
-				telefono = agenda.
-				cc.modificarTlf(nombre, telefono, nuevoTlf);
-				
-			break;*/
+				cc.modificarTlf(nombre, nuevoTlf);
+			break;
 			
 			case 5:
 				System.out.println("Diga nombre del contacto");

@@ -64,6 +64,9 @@ public class Principal {
         System.out.println("(1) Agregar cliente a la cola");
         System.out.println("(2) Atender cliente");
         System.out.println("(3) Ver próximo cliente");
+        System.out.println("(4) ...");
+        System.out.println("(5) ...");
+        System.out.println("(6) ...");
         System.out.println("(0) Salir");
 	}
 	

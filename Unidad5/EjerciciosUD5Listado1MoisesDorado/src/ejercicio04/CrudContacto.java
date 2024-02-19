@@ -62,4 +62,9 @@ public class CrudContacto {
 	public void imprimirAgenda() {
 		System.out.println(agenda);
 	}
+	
+	public void modificarTlf(String nombre, String nuevoTlf) {
+		agenda.replace(buscarPorNombre(nombre), nuevoTlf);
+	}
+
 }

@@ -26,22 +26,31 @@ public class CrudAlumno {
 	}
 	
 	public Alumno buscarPorCodAlum(int codAlum) {
+		Iterator <Alumno> it = lista.iterator();
+		Alumno a =null;
 		boolean encontrado = false;
-		int i = 0;
-		Alumno AlumBuscado;
-		Iterator <Alumno> ite = lista.iterator();
-		while(ite.hasNext()) {
-			AlumBuscado = ite.next();
-			
-			if(AlumBuscado.getCodAlum() == codAlum) {
+		
+		while (it.hasNext() && !encontrado) {
+			a= it.next();
+			if(a.getCodAlum() == codAlum) {
 				encontrado = true;
-			}else {
-				encontrado = false;
 			}
-			if(encontrado) {
-				return AlumBuscado;
-			}else {
-				return null;
+		}
+		
+		if(encontrado) {
+			return a;
+		}else {
+			return null;
+		}
+		
+	}
+	
+	public Alumno buscarPorCodAlumV2(int codAlum) {
+		if (lista.size() != 0) {
+			for (Alumno alumno : lista) {
+				if (alumno.getCodAlum() == codAlum) {
+					return alumno;
+				}
 			}
 		}
 		return null;
@@ -57,6 +66,13 @@ public class CrudAlumno {
 		Alumno a;
 		a = buscarPorCodAlum(codAlum);
 		a.setNombre(nuevoNombre);
+	}
+	
+	public void  verAlumnos () {
+		for (Alumno alumno : lista) {
+			System.out.println(alumno);
+		}
+		
 	}
 	
 }

@@ -30,8 +30,9 @@ public class Principal {
 		
 		lista.add(new Alumno("Moisés", "Dorado Gutiérrez", 1));
 		lista.add(new Alumno("Bruno", "Delgado Herrero", 2));
-		lista.add(new Alumno("Miguel", "Campo Fields", 3));
+		lista.add(new Alumno("Miguel", "Campos Fields", 3));
 		lista.add(new Alumno("Luismi", "López Magaña", 4));
+		lista.add(new Alumno("Ángel", "Naranjo  González", 5));
 		
 		System.out.println("Diga el código del alumno que desea ver");
 		codAlum = Leer.datoInt();

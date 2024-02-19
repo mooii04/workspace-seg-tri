@@ -61,6 +61,8 @@ public class Principal {
         System.out.println("(2) Atender cliente");
         System.out.println("(3) Mostrar cola de clientes");
         System.out.println("(4) Mostrar número de clientes en la cola");
+        System.out.println("(5) ...");
+        System.out.println("(6) ...");
         System.out.println("(0) Salir");
         System.out.print("Ingrese su opción: ");
 	}
