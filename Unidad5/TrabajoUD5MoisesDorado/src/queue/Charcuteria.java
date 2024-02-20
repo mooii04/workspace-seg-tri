@@ -1,5 +1,6 @@
 package queue;
 
+import java.util.Iterator;
 import java.util.Queue;
 
 public class Charcuteria {
@@ -45,12 +46,29 @@ public class Charcuteria {
         return !colaClientes.isEmpty();
     }
 
-    public boolean contieneCliente(Cliente cliente) {
-        return colaClientes.contains(cliente);
+    //DECIRSELO A CARLOS PARA VER CUAL ES EL PROBLEMA
+    public boolean contieneCliente(int numTicket) {
+    	if (buscarByNumTicket(numTicket) != null) {
+    		return colaClientes.contains(numTicket);	
+    	} else {
+    		return colaClientes.contains(false);
+    	}
+        
     }
 
     public void limpiarCola() {
         colaClientes.clear();
         System.out.println("Se ha limpiado la cola de clientes.");
+    }
+    
+    public Cliente buscarByNumTicket(int numTicket){
+    
+    	for (Iterator<Cliente> iterator = colaClientes.iterator(); iterator.hasNext();) {
+			Cliente cliente = (Cliente) iterator.next();
+			if(cliente.getNumTicket() == numTicket) {
+				return cliente;
+			}
+		}
+    	return null;
     }
 }

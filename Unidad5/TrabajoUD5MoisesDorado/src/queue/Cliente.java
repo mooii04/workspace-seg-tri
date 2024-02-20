@@ -3,9 +3,12 @@ package queue;
 public class Cliente {
 
 	private String nombre;
-
-	public Cliente(String nombre) {
-	    this.nombre = nombre;
+	private int numTicket;
+	
+	public Cliente(String nombre, int numTicket) {
+		super();
+		this.nombre = nombre;
+		this.numTicket = numTicket;
 	}
 
 	public String getNombre() {
@@ -16,9 +19,17 @@ public class Cliente {
 		this.nombre = nombre;
 	}
 
+	public int getNumTicket() {
+		return numTicket;
+	}
+
+	public void setNumTicket(int numTicket) {
+		this.numTicket = numTicket;
+	}
+
 	@Override
 	public String toString() {
-		return "Cliente [nombre=" + nombre + "]";
+		return "Cliente [nombre=" + nombre + ", numTicket=" + numTicket + "]";
 	}
 	
 }

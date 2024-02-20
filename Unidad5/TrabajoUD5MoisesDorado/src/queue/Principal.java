@@ -13,7 +13,7 @@ public class Principal {
 		Queue <Cliente> colaCliente = new LinkedList <Cliente>();
 		
 		Charcuteria charcuteria = new Charcuteria(colaCliente);
-        int op, cantClientes;
+        int op, cantClientes, numTicket;
         String nombreCliente;
         String nombreLocal = "Chorizos Familia";
         
@@ -27,7 +27,11 @@ public class Principal {
                 case 1:
                     System.out.println("Ingrese el nombre del cliente:");
                     nombreCliente = Leer.dato();
-                    charcuteria.agregarCliente(new Cliente(nombreCliente));
+                    
+                    System.out.println("Ingrese el número del ticket");
+                    numTicket = Leer.datoInt();
+                    
+                    charcuteria.agregarCliente(new Cliente(nombreCliente, numTicket));
                 break;
                 
                 case 2:
@@ -50,18 +54,18 @@ public class Principal {
                 
                 case 4:
                 	cantClientes = charcuteria.cantidadClientesEnCola();
+                	
                     System.out.println("Cantidad de clientes en cola: " + cantClientes);
                 break;
                 
                 case 5:
-                	System.out.println("Ingrese el nombre del cliente");
-                    nombreCliente = Leer.dato();
-                    Cliente clienteBuscado = new Cliente(nombreCliente);
+                	System.out.println("Ingrese el número del ticket para ver si está en la cola:");
+                    numTicket = Leer.datoInt();
                     
-                    if(charcuteria.contieneCliente(clienteBuscado)) {
-                    	System.out.println("El cliente " + nombreCliente + " está en la cola.");
+                    if(charcuteria.contieneCliente(numTicket)) {
+                    	System.out.println("El cliente está en la cola");
                     } else {
-                        System.out.println("El cliente " + nombreCliente + " no está en la cola.");
+                        System.out.println("El cliente no está en la cola");
                     }
                 break;
                 

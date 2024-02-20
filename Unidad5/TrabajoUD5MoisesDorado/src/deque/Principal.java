@@ -10,12 +10,12 @@ public class Principal {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		Deque <Cliente> colaBanco = new ArrayDeque <Cliente>();
+		Deque <ClienteB> colaBanco = new ArrayDeque <ClienteB>();
 		
 		Banco b = new Banco(colaBanco);
 
         int op, numClientes;
-        String nombreCliente, nombreClienteFinal, nombreClienteEliminado, dniCliente;
+        String nombreCliente, nombreClienteFinal, dniCliente;
         
         do {
             imprimirMenu();
@@ -29,7 +29,7 @@ public class Principal {
                     System.out.print("Ingrese el dni del cliente: ");
                     dniCliente = Leer.dato();
                     
-                    b.agregarCliente(new Cliente(nombreCliente, dniCliente));
+                    b.agregarCliente(new ClienteB(nombreCliente, dniCliente));
                 break;
                 
                 case 2:
@@ -39,11 +39,11 @@ public class Principal {
                     System.out.print("Ingrese el dni del cliente: ");
                     dniCliente = Leer.dato();
                     
-                    b.agregarClienteAlFinal(new Cliente(nombreClienteFinal,dniCliente));
+                    b.agregarClienteAlFinal(new ClienteB(nombreClienteFinal,dniCliente));
                 break;
                 
                 case 3:
-                	Cliente clienteAtendido = b.atenderCliente();
+                	ClienteB clienteAtendido = b.atenderCliente();
                 	
                     if (clienteAtendido != null) {
                         System.out.println("Ha sido atendido el cliente: " + clienteAtendido.getNombre());
@@ -60,13 +60,10 @@ public class Principal {
                 break;
                 
                 case 6:
-                    System.out.print("Ingrese el nombre del cliente a eliminar: ");
-                    nombreClienteEliminado = Leer.dato();
-                    
-                    System.out.print("Ingrese el dni del cliente: ");
+                    System.out.print("Ingrese el dni del cliente a eliminar: ");
                     dniCliente = Leer.dato();
                     
-                    b.eliminarCliente(new Cliente(nombreClienteEliminado, dniCliente));
+                    b.eliminarCliente(dniCliente);
                 break;
                 
                 case 0:
