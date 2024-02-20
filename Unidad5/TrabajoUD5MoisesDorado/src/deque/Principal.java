@@ -15,7 +15,7 @@ public class Principal {
 		Banco b = new Banco(colaBanco);
 
         int op, numClientes;
-        String nombreCliente, nombreClienteFinal, nombreClienteRemover;
+        String nombreCliente, nombreClienteFinal, nombreClienteEliminado, dniCliente;
         
         do {
             imprimirMenu();
@@ -25,17 +25,26 @@ public class Principal {
                 case 1:
                     System.out.print("Ingrese el nombre del cliente: ");
                     nombreCliente = Leer.dato();
-                    b.agregarCliente(new Cliente(nombreCliente));
+                    
+                    System.out.print("Ingrese el dni del cliente: ");
+                    dniCliente = Leer.dato();
+                    
+                    b.agregarCliente(new Cliente(nombreCliente, dniCliente));
                 break;
                 
                 case 2:
                     System.out.print("Ingrese el nombre del cliente: ");
                     nombreClienteFinal = Leer.dato();
-                    b.agregarClienteAlFinal(new Cliente(nombreClienteFinal));
+                    
+                    System.out.print("Ingrese el dni del cliente: ");
+                    dniCliente = Leer.dato();
+                    
+                    b.agregarClienteAlFinal(new Cliente(nombreClienteFinal,dniCliente));
                 break;
                 
                 case 3:
                 	Cliente clienteAtendido = b.atenderCliente();
+                	
                     if (clienteAtendido != null) {
                         System.out.println("Ha sido atendido el cliente: " + clienteAtendido.getNombre());
                     }
@@ -51,9 +60,13 @@ public class Principal {
                 break;
                 
                 case 6:
-                    System.out.print("Ingrese el nombre del cliente a remover: ");
-                    nombreClienteRemover = Leer.dato();
-                    b.removerCliente(new Cliente(nombreClienteRemover));
+                    System.out.print("Ingrese el nombre del cliente a eliminar: ");
+                    nombreClienteEliminado = Leer.dato();
+                    
+                    System.out.print("Ingrese el dni del cliente: ");
+                    dniCliente = Leer.dato();
+                    
+                    b.eliminarCliente(new Cliente(nombreClienteEliminado, dniCliente));
                 break;
                 
                 case 0:
@@ -74,7 +87,7 @@ public class Principal {
         System.out.println("(3) Atender cliente");
         System.out.println("(4) Mostrar cola de clientes");
         System.out.println("(5) Mostrar número de clientes en la cola");
-        System.out.println("(6) Remover un cliente de la cola");
+        System.out.println("(6) Eliminar un cliente de la cola");
         System.out.println("(0) Salir");
         System.out.print("Ingrese su opción: ");
 	}

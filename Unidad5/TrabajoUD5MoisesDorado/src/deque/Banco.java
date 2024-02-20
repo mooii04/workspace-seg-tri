@@ -1,6 +1,7 @@
 package deque;
 
 import java.util.Deque;
+import java.util.Iterator;
 
 public class Banco {
     private Deque<Cliente> cola;
@@ -57,11 +58,22 @@ public class Banco {
         return cola.peekLast();
     }
 
-    public void removerCliente(Cliente cliente) {
+    public void eliminarCliente(Cliente cliente) {
         if (cola.remove(cliente)) {
-            System.out.println("El cliente " + cliente.getNombre() + " ha sido removido de la cola.");
+            System.out.println("El cliente " + cliente.getNombre() + " ha sido eliminado de la cola.");
         } else {
             System.out.println("El cliente no está en la cola.");
         }
+    }
+    
+    public Cliente findByDni(String dni){
+    	
+    	for (Iterator<Cliente> iterator = cola.iterator(); iterator.hasNext();) {
+			Cliente cliente = (Cliente) iterator.next();
+			if(cliente.getDni().equalsIgnoreCase(dni)) {
+				return cliente;
+			}
+		}
+    	return null;
     }
 }
