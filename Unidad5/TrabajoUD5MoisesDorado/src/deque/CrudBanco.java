@@ -57,13 +57,8 @@ public class CrudBanco {
         return cola.peekLast();
     }
 
-    public void eliminarCliente(String dni) {
-        if (buscarByDni(dni) != null) {
-        	cola.remove(buscarByDni(dni));
-            System.out.println("El cliente ha sido eliminado de la cola.");
-        } else {
-            System.out.println("El cliente no está en la cola.");
-        }
+    public boolean eliminarCliente(String dni) {
+        	return cola.remove(buscarByDni(dni));    
     }
     
     public ClienteB buscarByDni(String dni){

@@ -10,6 +10,20 @@ public class Principal {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
+		/*
+		 * ENUNCIADO DEL EJERCICIO
+		 * El programa gestiona una cola de
+		 * clientes para el banco "Hardcore Pawn".
+		 * Permite agregar clientes al principio o
+		 * al final de la cola, atender al próximo
+		 * cliente, mostrar la cola de clientes,
+		 * mostrar el número total de clientes en
+		 * espera y eliminar un cliente de la cola
+		 * por su número de identificación. Los
+		 * usuarios interactúan con el sistema a
+		 * través de un menú interactivo.
+		 */
+		
 		Deque <ClienteB> colaBanco = new ArrayDeque <ClienteB>();
 		
 		CrudBanco cb = new CrudBanco(colaBanco);
@@ -70,7 +84,11 @@ public class Principal {
                     System.out.print("Ingrese el dni del cliente a eliminar: ");
                     dniCliente = Leer.dato();
                     
-                    cb.eliminarCliente(dniCliente);
+                    if (cb.buscarByDni(dniCliente) != null) {
+                        System.out.println("El cliente ha sido eliminado de la cola.");
+                    } else {
+                        System.out.println("El cliente no está en la cola.");
+                    }
                 break;
                 
                 case 0:

@@ -46,14 +46,8 @@ public class CrudCharcuteria {
         return !colaClientes.isEmpty();
     }
 
-    public void contieneCliente(int numTicket) {
-    	if (buscarByNumTicket(numTicket) != null) {
-    		colaClientes.contains(buscarByNumTicket(numTicket));
-    		System.out.println("El cliente se encuentra en la cola");
-    	} else {
-    		System.out.println("El cliente no se encuentra en la cola");
-    	}
-        
+    public boolean contieneCliente(int numTicket) {
+    		return colaClientes.contains(buscarByNumTicket(numTicket));
     }
 
     public void limpiarCola() {

@@ -10,6 +10,18 @@ public class Principal {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
+		/*
+		 * ENUNCIADO DEL EJERCICIO
+		 * El programa gestiona una cola de clientes
+		 * para la charcutería "Chorizos Familia".
+		 * Permite agregar clientes a la cola, atender
+		 * al próximo cliente, ver la cantidad de clientes
+		 * en espera, buscar un cliente por su número de
+		 * ticket y limpiar la cola. Los empleados
+		 * interactúan con el sistema a través de
+		 * un menú interactivo.
+		 */
+		
 		Queue <Cliente> colaCliente = new LinkedList <Cliente>();
 		
 		CrudCharcuteria cc = new CrudCharcuteria (colaCliente);
@@ -63,8 +75,12 @@ public class Principal {
                 case 5:
                 	System.out.println("Ingrese el número del ticket para ver si está en la cola:");
                     numTicket = Leer.datoInt();
-                    
-                    cc.contieneCliente(numTicket);
+                  
+                    if (cc.buscarByNumTicket(numTicket) != null) {
+                		System.out.println("El cliente se encuentra en la cola");
+                	} else {
+                		System.out.println("El cliente no se encuentra en la cola");
+                	}
                 break;
                 
                 case 6:
