@@ -12,11 +12,15 @@ public class Principal {
 
 		Deque <ClienteB> colaBanco = new ArrayDeque <ClienteB>();
 		
-		Banco b = new Banco(colaBanco);
+		CrudBanco cb = new CrudBanco(colaBanco);
 
+		Banco b = new Banco (cb, "Hardcore Pawn");
+		
         int op, numClientes;
         String nombreCliente, nombreClienteFinal, dniCliente;
         
+        System.out.print("Bienvenidos a: " + b.getNombre());
+   
         do {
             imprimirMenu();
             op = Leer.datoInt();
@@ -29,7 +33,7 @@ public class Principal {
                     System.out.print("Ingrese el dni del cliente: ");
                     dniCliente = Leer.dato();
                     
-                    b.agregarCliente(new ClienteB(nombreCliente, dniCliente));
+                    cb.agregarCliente(new ClienteB(nombreCliente, dniCliente));
                 break;
                 
                 case 2:
@@ -39,23 +43,26 @@ public class Principal {
                     System.out.print("Ingrese el dni del cliente: ");
                     dniCliente = Leer.dato();
                     
-                    b.agregarClienteAlFinal(new ClienteB(nombreClienteFinal,dniCliente));
+                    cb.agregarClienteAlFinal(new ClienteB(nombreClienteFinal,dniCliente));
                 break;
                 
                 case 3:
-                	ClienteB clienteAtendido = b.atenderCliente();
+                	ClienteB clienteAtendido = cb.atenderCliente();
                 	
                     if (clienteAtendido != null) {
                         System.out.println("Ha sido atendido el cliente: " + clienteAtendido.getNombre());
+                    } else {
+                    	System.out.println("La cola del banco está vacía.");
                     }
                 break;
              
                 case 4:
-                	b.mostrarCola();
+                	System.out.println("Clientes en la cola del banco:");
+                	cb.mostrarCola();
                 break;
                 
                 case 5:
-                	numClientes = b.obtenerNumeroClientes();
+                	numClientes = cb.obtenerNumeroClientes();
                     System.out.println("Número de clientes en la cola: " + numClientes);
                 break;
                 
@@ -63,7 +70,7 @@ public class Principal {
                     System.out.print("Ingrese el dni del cliente a eliminar: ");
                     dniCliente = Leer.dato();
                     
-                    b.eliminarCliente(dniCliente);
+                    cb.eliminarCliente(dniCliente);
                 break;
                 
                 case 0:

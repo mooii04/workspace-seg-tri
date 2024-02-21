@@ -12,12 +12,14 @@ public class Principal {
 		
 		Queue <Cliente> colaCliente = new LinkedList <Cliente>();
 		
-		Charcuteria charcuteria = new Charcuteria(colaCliente);
+		CrudCharcuteria cc = new CrudCharcuteria (colaCliente);
+		
+		Charcuteria c = new Charcuteria(cc, "Chorizos Familia");
+		
         int op, cantClientes, numTicket;
         String nombreCliente;
-        String nombreLocal = "Chorizos Familia";
         
-        System.out.println("Bienvenidos al sistema de la charcutería ["+nombreLocal+"]");
+        System.out.println("Bienvenidos al sistema de la charcutería ["+ c.getNombre() +"]");
         
         do{
             imprimirMenu();
@@ -31,12 +33,12 @@ public class Principal {
                     System.out.println("Ingrese el número del ticket");
                     numTicket = Leer.datoInt();
                     
-                    charcuteria.agregarCliente(new Cliente(nombreCliente, numTicket));
+                    cc.agregarCliente(new Cliente(nombreCliente, numTicket));
                 break;
                 
                 case 2:
-                    if (charcuteria.hayClientesEnCola()) {
-                        Cliente clienteAtendido = charcuteria.atenderCliente();
+                    if (cc.hayClientesEnCola()) {
+                        Cliente clienteAtendido = cc.atenderCliente();
                         System.out.println("Atendiendo a " + clienteAtendido.getNombre());
                     } else {
                         System.out.println("No hay clientes en la cola");
@@ -44,8 +46,8 @@ public class Principal {
                 break;
                 
                 case 3:
-                    if (charcuteria.hayClientesEnCola()) {
-                        Cliente proximoCliente = charcuteria.verProximoCliente();
+                    if (cc.hayClientesEnCola()) {
+                        Cliente proximoCliente = cc.verProximoCliente();
                         System.out.println("El próximo cliente en la cola es: " + proximoCliente.getNombre());
                     } else {
                         System.out.println("No hay clientes en la cola");
@@ -53,7 +55,7 @@ public class Principal {
                 break;
                 
                 case 4:
-                	cantClientes = charcuteria.cantidadClientesEnCola();
+                	cantClientes = cc.cantidadClientesEnCola();
                 	
                     System.out.println("Cantidad de clientes en cola: " + cantClientes);
                 break;
@@ -62,15 +64,16 @@ public class Principal {
                 	System.out.println("Ingrese el número del ticket para ver si está en la cola:");
                     numTicket = Leer.datoInt();
                     
-                    charcuteria.contieneCliente(numTicket);
+                    cc.contieneCliente(numTicket);
                 break;
                 
                 case 6:
-                	charcuteria.limpiarCola();
+                	cc.limpiarCola();
+                	System.out.println("Se ha limpiado la cola de clientes.");
                 break;
                 
                 case 0:
-                	System.out.println("Gracias por utilizar el sistema de la charcutería ["+nombreLocal+"]!!!");
+                	System.out.println("Gracias por utilizar el sistema de la charcutería ["+ c.getNombre() +"]!!!");
                 break;
                 
                 default:
