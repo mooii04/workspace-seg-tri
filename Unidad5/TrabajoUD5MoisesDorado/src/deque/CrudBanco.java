@@ -26,7 +26,7 @@ public class CrudBanco {
 	}
 	
 	public void agregarCliente(ClienteB cliente) {
-        cola.offerLast(cliente);
+        cola.offerFirst(cliente);
         System.out.println(cliente.getNombre() + " ha sido agregado a la cola del banco.");
     }
 

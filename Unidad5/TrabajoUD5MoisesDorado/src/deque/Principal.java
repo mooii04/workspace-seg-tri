@@ -86,7 +86,7 @@ public class Principal {
 	
 	public static void imprimirMenu() {
 		System.out.println("\n===== Menú de Banco =====");
-        System.out.println("(1) Agregar cliente a la cola");
+        System.out.println("(1) Agregar cliente al principio de la cola");
         System.out.println("(2) Agregar cliente al final de la cola");
         System.out.println("(3) Atender cliente");
         System.out.println("(4) Mostrar cola de clientes");
