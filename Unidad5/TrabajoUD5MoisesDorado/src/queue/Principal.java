@@ -62,11 +62,7 @@ public class Principal {
                 	System.out.println("Ingrese el número del ticket para ver si está en la cola:");
                     numTicket = Leer.datoInt();
                     
-                    if(charcuteria.contieneCliente(numTicket)) {
-                    	System.out.println("El cliente está en la cola");
-                    } else {
-                        System.out.println("El cliente no está en la cola");
-                    }
+                    charcuteria.contieneCliente(numTicket);
                 break;
                 
                 case 6:

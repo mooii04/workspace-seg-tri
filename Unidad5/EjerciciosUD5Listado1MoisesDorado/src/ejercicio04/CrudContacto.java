@@ -1,7 +1,8 @@
 package ejercicio04;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 public class CrudContacto {
 
@@ -29,17 +30,26 @@ public class CrudContacto {
 		agenda.put(c, tlf);
 	}
 	
-	public Contacto buscarPorNombre (String nombre) {	
-		
-		Contacto c = null;
-		Set <Contacto> claves = agenda.keySet();
-		for (Contacto conct : claves ) {
-			if(conct.getNombre().equals(nombre)) {
-				c = conct;
+	//Devolver alguna lista mejor, esto es para buscar una persona igual
+	public Contacto buscarPorNombre (String nombre) {	 
+		for (Contacto contc : agenda.keySet() ) {
+			if(contc.getNombre().equalsIgnoreCase(nombre)) {
+				return contc;
 			}
 		}
-		return c;
+		return null;
 	}
+	
+	//Devuelve una lista de personas
+		public List<Contacto> buscarPorNombreV2 (String nombre) {	 
+			List <Contacto> lista = new ArrayList <Contacto> ();
+			for (Contacto contc : agenda.keySet() ) {
+				if(contc.getNombre().equalsIgnoreCase(nombre)) {
+					lista.add(contc);
+				}
+			}
+			return lista;
+		}
 	
 	public void borrar(String nombre) {
 		if(buscarPorNombre(nombre)!=null) {

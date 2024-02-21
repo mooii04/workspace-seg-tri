@@ -46,12 +46,12 @@ public class Charcuteria {
         return !colaClientes.isEmpty();
     }
 
-    //DECIRSELO A CARLOS PARA VER CUAL ES EL PROBLEMA
-    public boolean contieneCliente(int numTicket) {
+    public void contieneCliente(int numTicket) {
     	if (buscarByNumTicket(numTicket) != null) {
-    		return colaClientes.contains(numTicket);	
+    		colaClientes.contains(buscarByNumTicket(numTicket));
+    		System.out.println("El cliente se encuentra en la cola");
     	} else {
-    		return colaClientes.contains(false);
+    		System.out.println("El cliente no se encuentra en la cola");
     	}
         
     }
