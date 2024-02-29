@@ -21,7 +21,7 @@ public class Principal {
 		personas.add(new Persona("Miguel", "Campos Fields", "29584143A", 39));
 		personas.add(new Persona("Ángel", "Naranjo González", "29584143Z", 48));
 		
-		System.out.println("Ordenado por EDAD (no  natural)");
+		System.out.println("Ordenado por EDAD (NO  natural)");
 		Collections.sort(personas, new ComparaPorEdad());
 		System.out.println();
 		for (Persona p : personas) {

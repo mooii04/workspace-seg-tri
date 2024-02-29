@@ -1,6 +1,6 @@
 package ejercicio06;
 
-public class Trabajador {
+public class Trabajador implements Comparable <Trabajador>{
 
 	private String nombre;
 	private String dni;
@@ -52,5 +52,20 @@ public class Trabajador {
 		return "Trabajador [nombre=" + nombre + ", dni=" + dni + ", horasTrabajadas=" + horasTrabajadas
 				+ ", sueldoFinal=" + sueldoFinal + "]";
 	}
+
+	@Override
+	public int compareTo(Trabajador t) {
+		// TODO Auto-generated method stub
+		ComparaPorSueldo cs = new ComparaPorSueldo ();
+		
+		if(this.nombre.equalsIgnoreCase(t.getNombre())) {
+			return cs.compare(this.sueldoFinal, t.getSueldoFinal());
+		} else {
+			return this.nombre.compareToIgnoreCase(t.getNombre());
+		}
+		
+	}
+	
+	
 	
 }
