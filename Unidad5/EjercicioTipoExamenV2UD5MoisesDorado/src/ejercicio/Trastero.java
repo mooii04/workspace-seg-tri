@@ -1,14 +1,14 @@
 package ejercicio;
 
-public class Trastero {
+public class Trastero implements Comparable<Trastero>{
 
 	private double capacidad;
 	private String direccion;
 	private int numTrastero;
 	private double precio;
-	private boolean ocupado;
+	private int ocupado;
 	
-	public Trastero(double capacidad, String direccion, int numTrastero, double precio, boolean ocupado) {
+	public Trastero(double capacidad, String direccion, int numTrastero, double precio, int ocupado) {
 		super();
 		this.capacidad = capacidad;
 		this.direccion = direccion;
@@ -49,11 +49,11 @@ public class Trastero {
 		this.precio = precio;
 	}
 
-	public boolean isOcupado() {
+	public int getOcupado() {
 		return ocupado;
 	}
 
-	public void setOcupado(boolean ocupado) {
+	public void setOcupado(int ocupado) {
 		this.ocupado = ocupado;
 	}
 
@@ -61,6 +61,18 @@ public class Trastero {
 	public String toString() {
 		return "Trastero [capacidad=" + capacidad + ", direccion=" + direccion + ", numTrastero=" + numTrastero
 				+ ", precio=" + precio + ", ocupado=" + ocupado + "]";
+	}
+
+	@Override
+	public int compareTo(Trastero t) {
+		// TODO Auto-generated method stub
+		OrdenaPorPrecio op= new OrdenaPorPrecio();
+		
+		if(this.numTrastero == t.getNumTrastero()) {
+			return op.compare(this.precio, t.getPrecio());
+		} else {
+			return this.numTrastero(.compareTo(t.getNumTrastero()));
+		}
 	}
 	
 }

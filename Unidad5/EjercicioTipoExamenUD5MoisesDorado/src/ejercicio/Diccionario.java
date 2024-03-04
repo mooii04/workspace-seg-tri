@@ -35,7 +35,6 @@ public class Diccionario {
 		}
 	}
 	
-	//PEDIR A BRUNO PARA HACERLO MEJOR AÑADIENDO MAS SIGNIFICADOS
 	public void agregarLista (Palabra p) {
 		listaPalabras.add(p);
 	}

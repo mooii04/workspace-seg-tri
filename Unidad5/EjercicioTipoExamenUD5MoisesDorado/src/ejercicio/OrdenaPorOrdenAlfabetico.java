@@ -8,7 +8,6 @@ public class OrdenaPorOrdenAlfabetico implements Comparator <Palabra>{
 	public int compare(Palabra p1, Palabra p2) {
 		// TODO Auto-generated method stub
 		return 0;
-		//PEDIR A BRUNO Q DA PEREZA
 	}
 	
 }
