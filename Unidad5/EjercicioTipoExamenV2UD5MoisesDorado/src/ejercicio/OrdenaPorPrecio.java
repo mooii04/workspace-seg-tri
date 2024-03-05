@@ -2,18 +2,17 @@ package ejercicio;
 
 import java.util.Comparator;
 
-public class OrdenaPorPrecio implements Comparator<Double>{
+public class OrdenaPorPrecio implements Comparator<Trastero>{
 
 	@Override
-	public int compare(Double precio1, Double precio2) {
+	public int compare(Trastero t1, Trastero t2) {
 		// TODO Auto-generated method stub
-		
-		if (precio1 < precio2) {
+		if(t1.getPrecio() < t2.getPrecio()) {
 			return -1;
-		} else {
-			if (precio1 > precio2) {
-				return 1;
-			}
+		}
+		if(t1.getPrecio() > t2.getPrecio()) {
+			return 1;
+		}else {
 			return 0;
 		}
 	}

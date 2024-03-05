@@ -1,6 +1,6 @@
 package ejercicio;
 
-import java.util.Iterator;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Oficina {
@@ -31,23 +31,14 @@ public class Oficina {
 	}
 	
 	//case 2
-	public Trastero buscarByPrecio(double precio) {
-		Iterator <Trastero> ite = listaTrasteros.iterator();
-		Trastero t =null;
-		boolean encontrado = false;
-		
-		while (ite.hasNext() && !encontrado) {
-			t= ite.next();
+	public List<Trastero> buscarByPrecio(double precio) {
+		List<Trastero> mismoPrecio = new ArrayList<Trastero>();
+		for (Trastero t : mismoPrecio) {
 			if(t.getPrecio() == precio) {
-				encontrado = true;
+				mismoPrecio.add(t);
 			}
 		}
-		
-		if(encontrado) {
-			return t;
-		}else {
-			return null;
-		}
+		return mismoPrecio;
 	}
 	
 	//case 3

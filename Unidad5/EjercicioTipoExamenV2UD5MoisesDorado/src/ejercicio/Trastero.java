@@ -66,13 +66,13 @@ public class Trastero implements Comparable<Trastero>{
 	@Override
 	public int compareTo(Trastero t) {
 		// TODO Auto-generated method stub
-		OrdenaPorPrecio op= new OrdenaPorPrecio();
-		
-		if(this.numTrastero == t.getNumTrastero()) {
-			return op.compare(this.precio, t.getPrecio());
-		} else {
-			return this.numTrastero(.compareTo(t.getNumTrastero()));
+		if(this.getNumTrastero() < t.getNumTrastero()) {
+			return -1;
+		}
+		if(this.getNumTrastero() > t.getNumTrastero()) {
+			return 1;
+		}else {
+			return 0;
 		}
 	}
-	
 }
