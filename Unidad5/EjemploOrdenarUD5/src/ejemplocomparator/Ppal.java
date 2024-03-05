@@ -95,7 +95,6 @@ public class Ppal {
 					System.out.println("\tGANADORES");
 					Collections.sort(corredores, new ComparaPorMarca());
 					System.out.println();
-	
 					for (Corredor con : corredores) {
 						System.out.println(con);
 					}
