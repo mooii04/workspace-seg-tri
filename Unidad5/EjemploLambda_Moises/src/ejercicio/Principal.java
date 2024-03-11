@@ -78,6 +78,11 @@ public class Principal {
 		//Mirar bien el documento de Fran y Pablo para entender mejor
 		System.out.println(multiplicacion.apply(null, null));
 		
+		
+		//Predicated
+		//Mirar mejor en el PDF ya que se tiene que usar con otra clase más
+		//Predicated<Objeto> nombre = (Objeto o) -> o.getParámetro >= num;
+		
 	}
 
 }
