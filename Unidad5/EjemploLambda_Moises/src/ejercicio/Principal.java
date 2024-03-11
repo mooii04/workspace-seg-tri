@@ -2,6 +2,7 @@ package ejercicio;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.BiFunction;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Supplier;
@@ -59,9 +60,23 @@ public class Principal {
 		}
 		
 		
-		//Y ahora un Function
+		//Ahora un Function
 		Function <Double, Double> algo = (a) -> 10.0*5.0;
 		Function <Double, Double> algo2 = (a) -> 10.0/5.0;
+		
+		//En el null iría un double
+		System.out.println(algo.apply(null));
+		
+		//En el null iría un double
+		System.out.println(algo.andThen(algo2).apply(null));
+		
+		
+		//Ahora un BiFunction
+		//las dos primeras es lo que pasamos y la tercera es lo que devuelve
+		BiFunction <Integer, Double, Double> multiplicacion = (e, f) -> e*f;
+		
+		//Mirar bien el documento de Fran y Pablo para entender mejor
+		System.out.println(multiplicacion.apply(null, null));
 		
 	}
 
