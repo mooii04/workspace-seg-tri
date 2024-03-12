@@ -38,7 +38,10 @@ public class Concesionario {
 
 	public double calcularMediaPrecioCoches(String marca) {
 
-		return crudCoche.buscarPorMarca(marca).stream().mapToDouble(t -> t.getPrecio()).average().getAsDouble();
+		return crudCoche.buscarPorMarca(marca).
+				stream().mapToDouble(t -> t.getPrecio()).
+				average().
+				getAsDouble();
 	}
 
 	// Método para conocer los extras de un coche
@@ -60,7 +63,7 @@ public class Concesionario {
 		return crudCoche.getListaCoche().stream().sorted(compararPrecios).toList();
 	}
 
-	// Método para ordenar la lista de coches dadapor la marca y el modelo
+	// Método para ordenar la lista de coches dada por la marca y el modelo
 
 	public List<Coche> ordenarPorOrdenAlfabeticoMarcaYModelo() {
 		Comparator<Coche> compararMarcaYModelo = Comparator.comparing(Coche::getMarca)
