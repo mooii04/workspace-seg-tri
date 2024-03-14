@@ -50,7 +50,7 @@ public class Agenda {
 	}
 	
 	//case 5
-	public List<String> mostrarNombresMayusculas(){
+	public List<Nombre> mostrarNombresMayusculas(){
 		return lista.stream().map(nombre -> nombre.getName().toUpperCase()).toList();
 	}
 	

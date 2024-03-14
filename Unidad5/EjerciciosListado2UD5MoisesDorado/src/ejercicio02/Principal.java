@@ -51,6 +51,7 @@ public class Principal {
 					break;
 					
 				case 5:
+					a.setLista(a.mostrarNombresMayusculas());
 					System.out.println(a.mostrarNombresMayusculas());
 					break;
 					
