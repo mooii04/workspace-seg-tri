@@ -51,7 +51,8 @@ public class Principal {
 					break;
 					
 				case 5:
-					a.setLista(a.mostrarNombresMayusculas());
+					//No va con el set y si el metodo pongo List 
+					//a.setLista(a.mostrarNombresMayusculas());
 					System.out.println(a.mostrarNombresMayusculas());
 					break;
 					
