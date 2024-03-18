@@ -73,9 +73,7 @@ public class Principal {
 						sol = num1/num2;
 						System.out.println("La solución es: %.2f"+ sol);
 					}catch(Exception e){
-						System.err.println("Porfavor inserte un número entero");
-					}catch(RuntimeException rt) {
-						System.out.println();
+						System.err.println("Porfavor inserte un número entero y que no sea 0 el segundo número");
 					}
 					break;
 					
