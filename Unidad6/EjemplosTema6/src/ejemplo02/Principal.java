@@ -10,6 +10,7 @@ public class Principal {
 		// TODO Auto-generated method stub
 		
 		String fechaString;
+		boolean fin=false;
 		
 		do {
 			try {
@@ -26,12 +27,14 @@ public class Principal {
 				h.hacerReserva(fechaPaReservar);
 				System.out.println("Reserva confirmada");
 				
+				fin = true;
+				
 			}catch(FechaException e) {
 				System.out.println(e.getMessage());
-			}catch(Exception e) {
+			}catch(RuntimeException e) {
 				System.out.println("Introduce una fecha en el formato correcto YYYY-MM-DD");
 			}
-		while(fin);
+		}while(!fin);
 		
 	}
 

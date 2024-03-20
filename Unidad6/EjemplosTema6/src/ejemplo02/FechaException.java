@@ -1,6 +1,6 @@
 package ejemplo02;
 
-public class FechaException extends Exception{
+public class FechaException extends RuntimeException{
 
 	/**
 	 * 
